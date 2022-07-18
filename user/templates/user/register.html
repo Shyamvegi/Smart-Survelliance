@@ -1,0 +1,42 @@
+{%load static %}
+<html>
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="{% static 'js/main.js' %}"></script>
+    <title>
+        Registration
+    </title>
+</head>
+
+<body>
+    <center>
+        <img src="{%static '/images/earth.png' %}" alt="Logo" class="logo" /><br />
+        <div class="sign_up_card">
+            <div style="margin-top: 20%;">
+                <form method="post" action="{%url 'register' %}" onsubmit="return validateForm()">
+                    {% csrf_token %}
+                    <input type="text" oninput="isvalidUsername()" id="uname" name="uname" class="Input-text"
+                        placeholder="Username" required><br />
+                    <input type="mail" oninput="isValidMail()" id="mail" name="mail" class="Input-text"
+                        placeholder="Email" required><br />
+                    <input type="password" oninput="isValidPasskey()" id="psd" name="psd" class="Input-text"
+                        placeholder="Password" required><br />
+                    <input type="password" oninput="cpsdMatchesPsd()" id="cpsd" name="cpsd" class="Input-text"
+                        placeholder="Confirm Password" required><br />
+                    <button type="submit" class="sign_btn" style="margin-left: 5%;">Sign Up</button><br />
+                </form>
+                
+            </div>
+            <div class="error_container">
+                <li id="uname_hint">Username length should be >4</li><br />
+                <li id="mail_hint">Mail id is invalid</li><br />
+                <li id="psd_hint">Password is weak</li><br />
+                <li id="cpsd_hint">Both the passwords should match</li><br />
+                <span class="txt">Have an account? </span><a href="{% url 'index' %}">Signin</a>
+            </div>
+        </div>
+    </center>
+</body>
+
+</html>

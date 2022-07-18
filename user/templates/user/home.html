@@ -1,0 +1,55 @@
+{% load static %}
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        function initiate(param1) {
+            
+            $.ajax({
+                data: { action: param1 },
+                url: "{% url 'performAction' %}",
+                type: "GET",
+                success: successFunc,
+                error: errorFunc
+            });
+
+            function successFunc(response) {
+                alert(response["actn"]);
+            }
+            function errorFunc() {
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        {% if user.is_authenticated %}
+        <div class="ribbon"><a href="{% url 'logout' %}">Logout <i class="fa fa-sign-out"></i></a></div>
+        <li>User : {{ user.get_username }}</li>
+        <div class="actn-btn-holder">
+            <button class="start-button" onclick="initiate('init')">Start Monitoring</button><br />
+            <button class="stop-button" onclick="initiate('dest')">Stop Monitoring</button><br />
+
+        </div>
+        {%else %}
+        <div class="lost_container">
+            <div>
+                <h1>Invalid Access..</h1><br />
+                <h1>Invalid Access..</h1><br />
+                <h1>Invalid Access..</h1><br />
+                <img src="{%static '/images/lost.png' %}" alt="Lost" style="width: 500px;height: 500px;" /><br />
+                <span style="color: grey;font-size: 20pt;">Lost your way ? </span><a
+                    href="{% url 'index' %}">Login</a><span style="color: grey;font-size: 20pt;"> here</span>
+            </div>
+        </div>
+        {%endif %}
+    </center>
+</body>
+
+</html>

@@ -1,0 +1,261 @@
+body {
+    /* background-color: #E3F2FD; */
+    background-image: radial-gradient(circle at 0% 0%, #373b52, #252736 51%, #1d1e26);
+}
+
+.sign_in_card {
+    margin: auto;
+    margin-top: .5%;
+    width: 30%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+}
+.sign_up_card
+{
+    margin: auto;
+    margin-top: .5%;
+    width: 30%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
+:root {
+    /* generic */
+    --gutterSm: 0.4rem;
+    --gutterMd: 0.8rem;
+    --gutterLg: 1.6rem;
+    --gutterXl: 2.4rem;
+    --gutterXx: 7.2rem;
+    --colorPrimary400: #7e57c2;
+    --colorPrimary600: #5e35b1;
+    --colorPrimary800: rgba(100, 100, 111, 0.2);
+    --fontFamily: "Dosis", sans-serif;
+    --fontSizeSm: 1.2rem;
+    --fontSizeMd: 1.6rem;
+    --fontSizeLg: 2.1rem;
+    --fontSizeXl: 2.8rem;
+    --fontSizeXx: 3.6rem;
+    --lineHeightSm: 1.1;
+    --lineHeightMd: 1.8;
+    --transitionDuration: 300ms;
+    --transitionTF: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    /* floated labels */
+    --inputPaddingV: var(--gutterMd);
+    --inputPaddingH: var(--gutterLg);
+    --inputFontSize: var(--fontSizeLg);
+    --inputLineHeight: var(--lineHeightMd);
+    --labelScaleFactor: 0.8;
+    --labelDefaultPosY: 50%;
+    --labelTransformedPosY: calc((var(--labelDefaultPosY)) - (var(--inputPaddingV) * var(--labelScaleFactor)) - (var(--inputFontSize) * var(--inputLineHeight)));
+    --inputTransitionDuration: var(--transitionDuration);
+    --inputTransitionTF: var(--transitionTF);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+
+.Wrapper {
+    flex: 0 0 80%;
+    max-width: 80%;
+}
+
+.Title {
+    margin: 0 0 var(--gutterXx) 0;
+    padding: 0;
+    color: #fff;
+    font-size: var(--fontSizeXx);
+    font-weight: 400;
+    line-height: var(--lineHeightSm);
+    text-align: center;
+    text-shadow: -0.1rem 0.1rem 0.2rem var(--colorPrimary800);
+}
+.lost_container
+{
+    margin-top: 5%;
+    width: 30%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Input {
+    position: relative;
+}
+
+.Input-text {
+    display: block;
+    margin-top: 5px;
+    padding: var(--inputPaddingV) var(--inputPaddingH);
+    color: inherit;
+    width: 100%;
+    font-family: inherit;
+    font-size: var(--inputFontSize);
+    font-weight: inherit;
+    line-height: var(--inputLineHeight);
+    border: none;
+    border-radius: 0.4rem;
+    transition: box-shadow var(--transitionDuration);
+    text-align: center;
+}
+
+.Input-text::placeholder {
+    color: #B0BEC5;
+}
+
+.Input-text:hover {
+    background-color: grey;
+}
+
+.Input-text:focus {
+    border: none;
+    outline: none;
+    box-shadow: 0.2rem 0.8rem 1.6rem var(--colorPrimary800);
+    background-color: grey;
+    color: white;
+}
+
+
+.Input-text:placeholder-shown+.Input-label {
+    visibility: hidden;
+    z-index: -1;
+}
+.sign_in_input
+{
+    float: left;
+}
+.error_container
+{
+    margin-left: 10%;
+    color: red;
+    font-size: 15px;
+}
+.error_msg
+{
+    font-size: larger;
+    color: red;
+    font-style: italic;
+}
+.sign_btn {
+    width: 150px;
+    height: 50px;
+    margin-left: 25%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: large;
+    color: black;
+    background-color: white;
+    transition: all .5s ease;
+}
+
+.sign_btn:hover {
+    background-color: black;
+    color: white;
+    border-color: #4A148C;
+}
+
+.txt {
+    color: grey;
+    font-size: x-large;
+    font-family: inherit;
+    margin-left: 9%;
+}
+
+a {
+    text-decoration: none;
+    font-size: x-large;
+    color: aqua;
+}
+
+.logo {
+    margin-top: 1%;
+    width: 250px;
+    height: 250px;
+    animation: rotation 4s infinite linear;
+}
+.actn-btn-holder
+{
+    margin-top: 10%;
+    display: block;
+    align-items: center;
+    justify-content:space-between;
+}
+.start-button
+{
+    width: 200px;
+    height: 70px;
+    color: navy;
+    background-color: lime;
+    font-weight: bolder;
+    font-size: 15pt;
+    border-radius: 35px;
+    border-color: lime;
+    margin: 4%;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.start-button:hover
+{
+    border-width: 4px;
+    border-color: lime;
+    color: lime;
+    background-color:transparent;
+}
+.stop-button
+{
+    width: 200px;
+    height: 70px;
+    color: white;
+    background-color: red;
+    font-weight: bolder;
+    font-size: 15pt;
+    border-radius: 35px;
+    border-color: red;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.stop-button:hover
+{
+    border-width: 4px;
+    border-color: red;
+    color: red;
+    background-color:transparent;
+}
+.ribbon
+{
+    float: right;
+    padding: 20px;
+    margin: 15px;
+    background-color: transparent;
+    display: flex;
+    align-items:flex-end;
+    justify-content:flex-end;
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
